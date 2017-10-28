@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class BankAccount {
 
-    /*
+    /**
      * You may want to use this to distinguish between different kinds of accounts.
      */
     public enum BankAccountType {
@@ -26,13 +26,47 @@ public class BankAccount {
     public double interestRate;
     private double interestEarned;
 
+    /**
+     * Constructor.
+     * @param name name of owner
+     * @param accountCategory type of account
+     */
     public BankAccount(final String name, final BankAccountType accountCategory) {
-        /*
-         * Implement this function
-         */
+        ownerName = name;
+        accountType = accountCategory;
+        Bank.setTotalAccounts(Bank.getTotalAccounts() + 1);
     }
 
     /*
      * Implement getters and setters as appropriate for private variables.
      */
+
+    /**
+     * Gets accountBalance.
+     * @return returns accountBalance
+     */
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+    /**
+     * Sets accountBalance.
+     * @param amount amount to set account balance to.
+     */
+    public void setAccountBalance(final double amount) {
+        accountBalance = amount;
+    }
+    /**
+     * Gets ownerName.
+     * @return returns ownerName
+     */
+    public String getOwnerName() {
+        return ownerName;
+    }
+    /**
+     * Sets ownerName.
+     * @param name new account name.
+     */
+    public void setOwnerName(final String name) {
+        ownerName = name;
+    }
 }
